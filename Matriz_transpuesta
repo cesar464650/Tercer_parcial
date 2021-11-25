@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<conio.h>
+//Flores Castillo Cesar Roberto
+int main(){
+	int m=50, n=50;
+	int mat[m][n];
+	int i, j;
+	
+	printf("Digite el numero de filas "); scanf("%d", &m);
+	while(m>51){
+		printf("Digite otro numero que este dentro del rango 1 a 50 "); scanf("%d", &m);
+	}
+	printf("Digite el numero de columnas "); scanf("%d", &n);
+	while(n>51){
+		printf("Digite otro numero que este dentro del rango 1 a 50 "); scanf("%d", &n);
+	}
+	printf("\n");
+	for(i=0; i<m; i++){
+		for(j=0; j<n; j++){
+			printf("Digite un numero %dx%d ", i+1, j+1);
+			scanf("%d", &mat[i][j]);
+		}
+	}
+	printf("\nMatriz:\n");
+	for(i=0; i<m; i++){
+		for(j=0; j<n; j++){
+			printf("%d ", mat[i][j]);
+		}
+		printf("\n");
+	}
+	
+	printf("\nMatriz transpuesta\n");
+	for(j=0;j<n; j++){
+		for(i=0; i<m; i++){
+			printf("%d ", mat[i][j]);
+		}
+		printf("\n");
+	}
+	
+	getch();
+	return 0;
+}
