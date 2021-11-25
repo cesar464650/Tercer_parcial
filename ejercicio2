@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<conio.h>
+//Flores Castillo Cesar Roberto
+int main(){
+	int m= 5,n=12;
+	float pre[5], pro[m][n];
+	int i, j;
+	float a[5], tmp=0, com=0;
+	int max=0, min=0;
+	
+	printf("Registre las unidades vendidas de los 5 productos en el año\n");
+	for(i=0; i<m; i++){
+		for(j=0; j<n; j++){
+			printf("Producto %d mes %d: ", i+1, j+1); scanf("%f", &pro[i][j]);
+			a[i] = a[i] + pro[i][j];
+		}
+	}
+	printf("\nRegistre el precio de cada producto\n");
+	for(i=0; i<m; i++){
+		printf("Producto %d: ", i+1); scanf("%f", &pre[i]);
+		a[i] = a[i]*pre[i];
+	}
+	printf("\na) Venta anual de cada producto\n");
+	for(i=0;i<m;i++){
+		printf("Producto %d: %.2f ", i+1, a[i]);
+		printf("\n");
+	}
+	printf("\nb) Promedio anual de las ventas de cada producto\n");
+	for(i=0; i<m; i++){
+		a[i] = a[i]/n;
+		printf("Producto %d: %.2f\n", i+1, a[i]);
+	}
+	
+	for(i=0; i<m; i++){
+		if(a[i]>tmp){
+			tmp=a[i];
+			max=i+1;
+		}
+	}
+	com=tmp;
+	for(i=0; i<m; i++){
+		if(a[i]<com){
+			com=a[i];
+			min=i+1;
+		}
+	}
+	printf("\nEl producto %d fue el mas vendido\n", max);
+	printf("El producto %d fue el menos vendido", min);
+	
+	getch();
+	return 0;
+}
